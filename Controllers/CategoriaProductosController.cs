@@ -153,5 +153,20 @@ namespace Gimnasio_Brothers.Controllers
         {
             return _context.CategoriaProductos.Any(e => e.IdcategoriaProducto == id);
         }
+
+        [HttpDelete]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConJs(CategoriaProducto categoriaProducto)
+        {
+            string mensaje = "Error al borrar registro";
+            var encontrado = _context.CategoriaProductos.Find(categoriaProducto.IdcategoriaProducto);
+            if (encontrado != null)
+            {
+                _context.CategoriaProductos.Remove(encontrado);
+                _context.SaveChanges();
+                mensaje = "Registro borrado!";
+            }
+            return Json(new { result = true, mensaje = mensaje });
+        }
     }
 }
