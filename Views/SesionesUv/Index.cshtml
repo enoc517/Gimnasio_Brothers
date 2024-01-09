@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<Gimnasio_Brothers.Models.SesionesUv>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Sesiones Uv";
 }
 
-<h1>Index</h1>
+<h1>Sesiones Uv</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success"> <i class="bi bi-plus-circle">Anadir Nuevo</i></a>
 </p>
-<table class="table">
+<table class="table" id="tblSesionesUv">
     <thead>
         <tr>
             <th>
@@ -49,11 +49,39 @@
                 @Html.DisplayFor(modelItem => item.IdclienteMembresiaNavigation.IdclienteMembresia)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Idsesiones">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Idsesiones">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Idsesiones">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Idsesiones" class="btn btn-warning"> <i class="bi bi-pencil-fill"> Editar</i> </a> |
+                    <a asp-action="Details" asp-route-id="@item.Idsesiones" class="btn btn-secondary"> <i class="bi bi-info-circle-fill"> Ver</i> </a> |
+                    <a asp-action="Delete" asp-route-id="@item.Idsesiones" class="btn btn-danger"> <i class="bi bi-x-circle-fill"> Eliminar</i> </a> 
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+@section scripts {
+    <script>
+        let table = new DataTable('#tblSesionesUv', {
+            "language": {
+                "decimal": "",
+                "emptyTable": "No hay registros",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "Mostrar _MENU_ Entradas",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "Buscar:",
+                "zeroRecords": "Sin resultados encontrados",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Ultimo",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
+            },
+            "width": "100%"
+        });
+    </script>
+}

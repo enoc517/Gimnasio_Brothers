@@ -160,5 +160,20 @@ namespace Gimnasio_Brothers.Controllers
         {
             return _context.SesionesUvs.Any(e => e.Idsesiones == id);
         }
+
+        [HttpDelete]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConJs(SesionesUv sesionesUv)
+        {
+            string mensaje = "Error al borrar registro";
+            var encontrado = _context.SesionesUvs.Find(sesionesUv.Idsesiones);
+            if (encontrado != null)
+            {
+                _context.SesionesUvs.Remove(encontrado);
+                _context.SaveChanges();
+                mensaje = "Registro borrado!";
+            }
+            return Json(new { result = true, mensaje = mensaje });
+        }
     }
 }
