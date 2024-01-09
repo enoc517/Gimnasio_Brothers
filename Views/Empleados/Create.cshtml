@@ -14,7 +14,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Idpuesto" class="control-label"></label>
-                <select asp-for="Idpuesto" class ="form-control" asp-items="ViewBag.Idpuesto"></select>
+                <select asp-for="Idpuesto" class="form-control" asp-items="ViewBag.Idpuesto"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
@@ -72,16 +72,18 @@
                 <span asp-validation-for="RetencionCcss" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button type="submit" class="btn btn-success"><i class="bi bi-plus-circle"> Crear</i></button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

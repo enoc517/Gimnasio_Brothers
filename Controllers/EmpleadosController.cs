@@ -155,7 +155,21 @@ namespace Gimnasio_Brothers.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        [HttpDelete]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConJs(Empleado empleado)
+        {
+            string mensaje = "Error al borrar registro";
+            var encontrado = _context.Empleados.Find(empleado.Idempleado);
+            if (encontrado != null)
+            {
+                _context.Empleados.Remove(encontrado);
+                _context.SaveChanges();
+                mensaje = "Registro borrado!";
+            }
 
+            return Json(new { result = true, mensaje = mensaje });
+        }
         private bool EmpleadoExists(int id)
         {
             return _context.Empleados.Any(e => e.Idempleado == id);
