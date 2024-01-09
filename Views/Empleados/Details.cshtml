@@ -4,87 +4,87 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detalles</h1>
 
 <div>
     <h4>Empleado</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nombre)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Nombre)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Apellidos)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Apellidos)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Dirreccion)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Dirreccion)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Telefono)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Telefono)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Cedula)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Cedula)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaContratacion)
+        <dt class="col-sm-2">
+            Fecha de Contratacion
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FechaContratacion)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaPago)
+        <dt class="col-sm-2">
+            Fecha de Pago
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FechaPago)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoriaProfesional)
+        <dt class="col-sm-2">
+            Categoria Profesional
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CategoriaProfesional)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NumSeguridadSocial)
+        <dt class="col-sm-2">
+            Numero de Seguridad Social
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.NumSeguridadSocial)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CuentaBancaria)
+        <dt class="col-sm-2">
+            Cuenta Bancaria
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CuentaBancaria)
+        <dd class="col-sm-10">
+            Cuenta Bancaria
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RetencionCcss)
+        <dt class="col-sm-2">
+            Retencion de Ccss
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RetencionCcss)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdpuestoNavigation)
+        <dt class="col-sm-2">
+            Puesto
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.IdpuestoNavigation.CategoriaPuesto)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Idempleado">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Idempleado" class="btn btn-danger"> <i class="bi bi-pencil-fill"> Editar</i> </a> |
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
 </div>
