@@ -155,7 +155,21 @@ namespace Gimnasio_Brothers.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        [HttpDelete]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConJs(Jornada jornada)
+        {
+            string mensaje = "Error al borrar registro";
+            var encontrado = _context.Jornadas.Find(jornada.Idjornadas);
+            if (encontrado != null)
+            {
+                _context.Jornadas.Remove(encontrado);
+                _context.SaveChanges();
+                mensaje = "Registro borrado!";
+            }
 
+            return Json(new { result = true, mensaje = mensaje });
+        }
         private bool JornadaExists(int id)
         {
             return _context.Jornadas.Any(e => e.Idjornadas == id);
