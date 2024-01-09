@@ -42,3 +42,50 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar Sala</h1>
+<br>
+<h4>Sala</h4>
+<br>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger">Id De Sala</div>
+            <input type="hidden" asp-for="Idsala" />
+            <div class="form-group">
+                <label asp-for="Dia" class="control-label"></label>
+                <input type="date" asp-for="Dia" class="form-control" />
+                <span asp-validation-for="Dia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cupo" class="control-label"></label>
+                <input asp-for="Cupo" class="form-control" />
+                <span asp-validation-for="Cupo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripción" class="control-label"></label>
+                <input asp-for="Descripción" class="form-control" />
+                <span asp-validation-for="Descripción" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<div>
+    <a asp-action="Index" class="btn btn-secondary"> <i class="bi bi-arrow-return-left"></i> Volver a Salas</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
