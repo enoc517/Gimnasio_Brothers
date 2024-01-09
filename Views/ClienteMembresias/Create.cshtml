@@ -1,12 +1,12 @@
 ﻿@model Gimnasio_Brothers.Models.ClienteMembresium
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear";
 }
 
-<h1>Create</h1>
+<h1>Añadir membresía</h1>
 
-<h4>ClienteMembresium</h4>
+<h4>Membresía de cliente</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,28 +22,28 @@
             </div>
             <div class="form-group">
                 <label asp-for="FechaProxRenovacion" class="control-label"></label>
-                <input asp-for="FechaProxRenovacion" class="form-control" />
+                <input asp-for="FechaProxRenovacion" type="date" class="form-control" />
                 <span asp-validation-for="FechaProxRenovacion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FechaInicio" class="control-label"></label>
-                <input asp-for="FechaInicio" class="form-control" />
+                <input asp-for="FechaInicio" type="date" class="form-control" />
                 <span asp-validation-for="FechaInicio" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FechaFin" class="control-label"></label>
-                <input asp-for="FechaFin" class="form-control" />
+                <input asp-for="FechaFin" type="date" class="form-control" />
                 <span asp-validation-for="FechaFin" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Añadir" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-return-left"> Regresar a la lista</i></a>
 </div>
 
 @section Scripts {
