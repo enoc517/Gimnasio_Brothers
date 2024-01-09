@@ -1,77 +1,105 @@
 ﻿@model IEnumerable<Gimnasio_Brothers.Models.Cliente>
 
-@{
-    ViewData["Title"] = "Index";
-}
+    @{
+    ViewData["Title"] = "Cliente";
+    }
 
-<h1>Index</h1>
+    <h1>Cliente</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apellidos)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dirrecion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaNacimento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cedula)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EstadoCliente)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SesionesRayosUva)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellidos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dirrecion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaNacimento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cedula)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EstadoCliente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SesionesRayosUva)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Idcliente">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Idcliente">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Idcliente">Delete</a>
-            </td>
-        </tr>
+    <p>
+        <a asp-action="Create" class="btn btn-success"> <i class="bi bi-plus-circle">Anadir Nuevo</i></a>
+    </p>
+    <table class="table" id="tblCliente">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Apellidos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dirrecion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaNacimento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cedula)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EstadoCliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SesionesRayosUva)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellidos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dirrecion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaNacimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cedula)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstadoCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SesionesRayosUva)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Idcliente" class="btn btn-warning"> <i class="bi bi-pencil-fill"> Editar</i> </a> |
+                    <a asp-action="Details" asp-route-id="@item.Idcliente" class="btn btn-secondary"> <i class="bi bi-info-circle-fill"> Ver</i> </a> |
+                    <a asp-action="Delete" asp-route-id="@item.Idcliente" class="btn btn-danger"> <i class="bi bi-x-circle-fill"> Eliminar</i> </a> |
+                </td>
+            </tr>
 }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+
+@section scripts {
+        <script>
+        let table = new DataTable('#tblCliente', {
+            "language": {
+                "decimal": "",
+                "emptyTable": "No hay registros",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "Mostrar _MENU_ Entradas",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "Buscar:",
+                "zeroRecords": "Sin resultados encontrados",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Ultimo",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
+            },
+            "width": "100%"
+        });
+        </script>
+}
