@@ -160,5 +160,20 @@ namespace Gimnasio_Brothers.Controllers
         {
             return _context.Martriculas.Any(e => e.Idmatricula == id);
         }
+
+        [HttpDelete]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConJs(Martricula martricula)
+        {
+            string mensaje = "Error al borrar registro";
+            var encontrado = _context.Martriculas.Find(martricula.Idmatricula);
+            if (encontrado != null)
+            {
+                _context.Martriculas.Remove(encontrado);
+                _context.SaveChanges();
+                mensaje = "Registro borrado!";
+            }
+            return Json(new { result = true, mensaje = mensaje });
+        }
     }
 }

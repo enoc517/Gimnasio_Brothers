@@ -1,10 +1,10 @@
 ﻿@model Gimnasio_Brothers.Models.Martricula
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Caracteristicas";
 }
 
-<h1>Details</h1>
+<h1>Caracteristicas</h1>
 
 <div>
     <h4>Martricula</h4>
@@ -31,6 +31,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Idmatricula">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Idmatricula" class="btn btn-danger">Editar</a> |
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
 </div>
