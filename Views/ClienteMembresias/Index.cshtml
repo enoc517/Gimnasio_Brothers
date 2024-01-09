@@ -4,28 +4,28 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Lista de membresías</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle"> Añadir membresía</i></a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FechaProxRenovacion)
+                Fecha de renovación
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaInicio)
+                Fecha inicio
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaFin)
+                Fecha fin
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdcategoraMembresiaNavigation)
+                Tipo de membresía
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdclienteNavigation)
+                Cliente
             </th>
             <th></th>
         </tr>
@@ -43,15 +43,15 @@
                 @Html.DisplayFor(modelItem => item.FechaFin)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdcategoraMembresiaNavigation.Descripcion)
+                @Html.DisplayFor(modelItem => item.IdcategoraMembresiaNavigation.Nombre)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdclienteNavigation.Apellidos)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdclienteMembresia">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdclienteMembresia">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdclienteMembresia">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.IdclienteMembresia" class="btn btn-warning"><i class="bi bi-pencil"> Renovar</i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdclienteMembresia" class="btn btn-secondary"><i class="bi bi-info-circle"> Ver</i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdclienteMembresia" class="btn btn-danger"><i class="bi bi-trash"> Eliminar</i></a>
             </td>
         </tr>
 }

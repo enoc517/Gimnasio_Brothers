@@ -1,12 +1,12 @@
 ﻿@model Gimnasio_Brothers.Models.ClienteMembresium
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Renovar";
 }
 
-<h1>Edit</h1>
+<h1>Renovar</h1>
 
-<h4>ClienteMembresium</h4>
+<h4>Membresía de cliente</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,41 +14,41 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IdclienteMembresia" />
             <div class="form-group">
-                <label asp-for="IdcategoraMembresia" class="control-label"></label>
+                <h6>Tipo de membresía</h6>
                 <select asp-for="IdcategoraMembresia" class="form-control" asp-items="ViewBag.IdcategoraMembresia"></select>
                 <span asp-validation-for="IdcategoraMembresia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Idcliente" class="control-label"></label>
+                <h6>Cliente</h6>
                 <select asp-for="Idcliente" class="form-control" asp-items="ViewBag.Idcliente"></select>
                 <span asp-validation-for="Idcliente" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FechaProxRenovacion" class="control-label"></label>
-                <input asp-for="FechaProxRenovacion" class="form-control" />
+                <h6>Fecha de renovación</h6>
+                <input asp-for="FechaProxRenovacion" type="date" class="form-control" />
                 <span asp-validation-for="FechaProxRenovacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FechaInicio" class="control-label"></label>
-                <input asp-for="FechaInicio" class="form-control" />
+                <h6>Fecha inicio</h6>
+                <input asp-for="FechaInicio" type="date" class="form-control" />
                 <span asp-validation-for="FechaInicio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FechaFin" class="control-label"></label>
-                <input asp-for="FechaFin" class="form-control" />
+                <h6>Fecha fin</h6>
+                <input asp-for="FechaFin" type="date" class="form-control" />
                 <span asp-validation-for="FechaFin" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-return-left"> Regresar a la lista</i></a>
 </div>
 
-@section Scripts {
+@section Scripts { 
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -4,22 +4,22 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Facturas</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle"></i> Nueva factura</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FechaEmicion)
+                Fecha de factura
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MetodoPago)
+                Metodo de pago
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdclienteMembresiaNavigation)
+                Id de membresía
             </th>
             <th></th>
         </tr>
@@ -37,9 +37,9 @@
                 @Html.DisplayFor(modelItem => item.IdclienteMembresiaNavigation.IdclienteMembresia)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Idfactura">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Idfactura">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Idfactura">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Idfactura" class="btn btn-warning"><i class="bi bi-pencil"> Editar</i></a> |
+                <a asp-action="Details" asp-route-id="@item.Idfactura" class="btn btn-secondary"><i class="bi bi-printer"> Imprimir</i></a> |
+                <a asp-action="Delete" asp-route-id="@item.Idfactura" class="btn btn-danger"><i class="bi bi-trash"> Eliminar</i></a>
             </td>
         </tr>
 }

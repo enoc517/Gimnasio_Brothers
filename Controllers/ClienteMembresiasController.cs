@@ -49,7 +49,7 @@ namespace Gimnasio_Brothers.Controllers
         // GET: ClienteMembresias/Create
         public IActionResult Create()
         {
-            ViewData["IdcategoraMembresia"] = new SelectList(_context.CategoriaMembresia, "IdcategoriaMembresia", "Descripcion");
+            ViewData["IdcategoraMembresia"] = new SelectList(_context.CategoriaMembresia, "IdcategoriaMembresia", "Nombre");
             ViewData["Idcliente"] = new SelectList(_context.Clientes, "Idcliente", "Apellidos");
             return View();
         }
@@ -67,7 +67,7 @@ namespace Gimnasio_Brothers.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdcategoraMembresia"] = new SelectList(_context.CategoriaMembresia, "IdcategoriaMembresia", "Descripcion", clienteMembresium.IdcategoraMembresia);
+            ViewData["IdcategoraMembresia"] = new SelectList(_context.CategoriaMembresia, "IdcategoriaMembresia", "Nombre", clienteMembresium.IdcategoraMembresia);
             ViewData["Idcliente"] = new SelectList(_context.Clientes, "Idcliente", "Apellidos", clienteMembresium.Idcliente);
             return View(clienteMembresium);
         }
@@ -85,7 +85,7 @@ namespace Gimnasio_Brothers.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdcategoraMembresia"] = new SelectList(_context.CategoriaMembresia, "IdcategoriaMembresia", "Descripcion", clienteMembresium.IdcategoraMembresia);
+            ViewData["IdcategoraMembresia"] = new SelectList(_context.CategoriaMembresia, "IdcategoriaMembresia", "Nombre", clienteMembresium.IdcategoraMembresia);
             ViewData["Idcliente"] = new SelectList(_context.Clientes, "Idcliente", "Apellidos", clienteMembresium.Idcliente);
             return View(clienteMembresium);
         }
@@ -122,7 +122,7 @@ namespace Gimnasio_Brothers.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdcategoraMembresia"] = new SelectList(_context.CategoriaMembresia, "IdcategoriaMembresia", "Descripcion", clienteMembresium.IdcategoraMembresia);
+            ViewData["IdcategoraMembresia"] = new SelectList(_context.CategoriaMembresia, "IdcategoriaMembresia", "Nombre", clienteMembresium.IdcategoraMembresia);
             ViewData["Idcliente"] = new SelectList(_context.Clientes, "Idcliente", "Apellidos", clienteMembresium.Idcliente);
             return View(clienteMembresium);
         }
