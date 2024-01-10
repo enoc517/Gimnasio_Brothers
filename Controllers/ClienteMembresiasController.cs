@@ -166,5 +166,21 @@ namespace Gimnasio_Brothers.Controllers
         {
             return _context.ClienteMembresia.Any(e => e.IdclienteMembresia == id);
         }
+
+        [HttpDelete]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConJs(ClienteMembresium cliente)
+        {
+            string mensaje = "Error al borrar registro";
+            var encontrado = _context.ClienteMembresia.Find(cliente.IdclienteMembresia);
+            if (encontrado != null)
+            {
+                _context.ClienteMembresia.Remove(encontrado);
+                _context.SaveChanges();
+                mensaje = "Registro borrado!";
+            }
+
+            return Json(new { result = true, mensaje = mensaje });
+        }
     }
 }
