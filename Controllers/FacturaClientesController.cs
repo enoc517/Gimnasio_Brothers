@@ -160,5 +160,21 @@ namespace Gimnasio_Brothers.Controllers
         {
             return _context.FacturaClientes.Any(e => e.Idfactura == id);
         }
+
+        [HttpDelete]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConJs(FacturaCliente factura)
+        {
+            string mensaje = "Error al borrar registro";
+            var encontrado = _context.FacturaClientes.Find(factura.Idfactura);
+            if (encontrado != null)
+            {
+                _context.FacturaClientes.Remove(encontrado);
+                _context.SaveChanges();
+                mensaje = "Registro borrado!";
+            }
+
+            return Json(new { result = true, mensaje = mensaje });
+        }
     }
 }
