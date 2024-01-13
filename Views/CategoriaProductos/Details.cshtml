@@ -1,13 +1,13 @@
 ﻿@model Gimnasio_Brothers.Models.CategoriaProducto
 
 @{
-    ViewData["Title"] = "Caracteristicas";
+    ViewData["Title"] = "Detalles de Categorias";
 }
 
-<h1>Caracteristicas</h1>
-
+<h1>Detalles de Producto</h1>
+<br>
 <div>
-    <h4>CategoriaProducto</h4>
+    <h4>Categoria de Producto</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -24,7 +24,8 @@
         </dd>
     </dl>
 </div>
+<br>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.IdcategoriaProducto" class="btn btn-danger">Editar</a> |
-    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"> Regresar a Categoria Productos</i></a>
 </div>

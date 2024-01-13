@@ -4,22 +4,24 @@
     ViewData["Title"] = "Editar";
 }
 
-<h1>Editar</h1>
-
+<h1>Editar Matricula</h1>
+<br>
 <h4>Martricula</h4>
 <hr />
+<br>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Idmatricula" />
             <div class="form-group">
-                <label asp-for="Idclase" class="control-label"></label>
+                <label asp-for="Idclase" class="control-label">Nombre Clase</label>
                 <input asp-for="Idclase" class="form-control" />
                 <span asp-validation-for="Idclase" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <label asp-for="Idcliente" class="control-label"></label>
+                <label asp-for="Idcliente" class="control-label">Cliente</label>
                 <select asp-for="Idcliente" class="form-control" asp-items="ViewBag.Idcliente"></select>
                 <span asp-validation-for="Idcliente" class="text-danger"></span>
             </div>
@@ -28,15 +30,16 @@
                     <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
                 </label>
             </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-success" />
+                <button type="submit" class="btn btn-success"><i class="bi bi-plus-circle"> Guardar</i></button>
             </div>
         </form>
     </div>
 </div>
-
+<br>
 <div>
-    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"> Regresar a Matricula</i></a>
 </div>
 
 @section Scripts {

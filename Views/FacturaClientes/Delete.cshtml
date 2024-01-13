@@ -5,14 +5,15 @@
 }
 
 <h1>Eliminar</h1>
-
+<br>
 <h3>Está seguro que desea eliminar la factura?</h3>
+<br>
 <div>
     <h4>FacturaCliente</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            Fecha de emisión
+            Fecha de Emisión
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaEmicion)
@@ -24,7 +25,7 @@
             @Html.DisplayFor(model => model.MetodoPago)
         </dd>
         <dt class = "col-sm-2">
-            Membresía
+            Membresia
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.IdclienteMembresiaNavigation.IdclienteMembresia)
@@ -34,7 +35,7 @@
     <form asp-action="Delete" id="formulario">
         <input type="hidden" asp-for="Idfactura" />
         <input type="button" id="btnDeleteJs" value="Eliminar" class="btn btn-danger" /> |
-        <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-return-left"> Regresar a facturas</i></a>
+        <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"> Regresar a Factura</i></a>
     </form>
 </div>
 

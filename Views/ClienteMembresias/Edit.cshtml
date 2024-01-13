@@ -5,9 +5,10 @@
 }
 
 <h1>Renovar</h1>
-
+<br>
 <h4>Membresía de cliente</h4>
 <hr />
+<br>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -38,15 +39,16 @@
                 <input asp-for="FechaFin" type="date" class="form-control" />
                 <span asp-validation-for="FechaFin" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <button type="submit" class="btn btn-success"><i class="bi bi-plus-circle"> Guardar</i></button>
             </div>
         </form>
     </div>
 </div>
-
+<br>
 <div>
-    <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-return-left"> Regresar a la lista</i></a>
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"> Regresar a Cliente Membresia</i></a>
 </div>
 
 @section Scripts { 

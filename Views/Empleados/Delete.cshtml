@@ -1,12 +1,13 @@
 ﻿@model Gimnasio_Brothers.Models.Empleado
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar";
 }
 
-<h1>Delete</h1>
-
-<h3>Are you sure you want to delete this?</h3>
+<h1>Eliminar Empleado</h1>
+<br>
+<h3>¿Esta seguro de eliminar este empleado?</h3>
+<br>
 <div>
     <h4>Empleado</h4>
     <hr />
@@ -42,31 +43,31 @@
             @Html.DisplayFor(model => model.Cedula)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaContratacion)
+            Fecha Contratacion
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaContratacion)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaPago)
+            Fecha Pago
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaPago)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoriaProfesional)
+            Categoria Profesional
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CategoriaProfesional)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NumSeguridadSocial)
+            Numero de Seguridad Social
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NumSeguridadSocial)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CuentaBancaria)
+            Cuenta Bancaria
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CuentaBancaria)
@@ -78,7 +79,7 @@
             @Html.DisplayFor(model => model.RetencionCcss)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdpuestoNavigation)
+            Puesto
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.IdpuestoNavigation.CategoriaPuesto)
@@ -87,10 +88,11 @@
     
     <form asp-action="Delete" id="Eliminarempleado">
         <input type="hidden" asp-for="Idempleado" />
-        <input type="button" id="btnDeleteJs" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+        <input type="button" id="btnDeleteJs" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"> Regresar a la Empleado</i></a>
     </form>
 </div>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

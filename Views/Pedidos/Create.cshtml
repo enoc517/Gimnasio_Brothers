@@ -5,7 +5,7 @@
 }
 
 <h1>Agregar</h1>
-
+<br>
 <h4>Pedido</h4>
 <hr />
 <div class="row">
@@ -13,11 +13,11 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Idempleado" class="control-label"></label>
+                <label asp-for="Idempleado" class="control-label">ID Empleado</label>
                 <select asp-for="Idempleado" class ="form-control" asp-items="ViewBag.Idempleado"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Idprovedores" class="control-label"></label>
+                <label asp-for="Idprovedores" class="control-label">ID Provedor</label>
                 <select asp-for="Idprovedores" class ="form-control" asp-items="ViewBag.Idprovedores"></select>
             </div>
             <div class="form-group">
@@ -26,12 +26,12 @@
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FechaCompra" class="control-label"></label>
+                <label asp-for="FechaCompra" class="control-label">Fecha De Compra</label>
                 <input asp-for="FechaCompra" class="form-control" />
                 <span asp-validation-for="FechaCompra" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FechaRecibido" class="control-label"></label>
+                <label asp-for="FechaRecibido" class="control-label">Fecha De Recibido</label>
                 <input asp-for="FechaRecibido" class="form-control" />
                 <span asp-validation-for="FechaRecibido" class="text-danger"></span>
             </div>
@@ -40,15 +40,16 @@
                 <input asp-for="Cantidad" class="form-control" />
                 <span asp-validation-for="Cantidad" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Agregar" class="btn btn-primary" />
+                <button type="submit" class="btn btn-success  bi bi-plus-circle"> Agregar Pedido</button>
             </div>
         </form>
     </div>
 </div>
-
+<br>
 <div>
-    <a asp-action="Index">Regresar a la lista</a>
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"></i> Regresar a Pedido</a>
 </div>
 
 @section Scripts {

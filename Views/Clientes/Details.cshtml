@@ -4,11 +4,12 @@
     ViewData["Title"] = "Caracteristicas";
 }
 
-<h1>Caracteristicas</h1>
-
+<h1>Caracteristicas De Cliente</h1>
+<br>
 <div>
     <h4>Cliente</h4>
     <hr />
+    <br>
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nombre)
@@ -29,7 +30,7 @@
             @Html.DisplayFor(model => model.Dirrecion)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaNacimento)
+            Fecha De Nacimento
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaNacimento)
@@ -47,20 +48,21 @@
             @Html.DisplayFor(model => model.Cedula)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EstadoCliente)
+            Estado Del Cliente
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.EstadoCliente)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SesionesRayosUva)
+            Sesiones de Rayos UV
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.SesionesRayosUva)
         </dd>
     </dl>
 </div>
+<br>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Idcliente" class="btn btn-danger">Editar</a> |
-    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+    <a asp-action="Edit" asp-route-id="@Model?.Idcliente" class="btn btn-danger"> <i class="bi bi-pencil-fill">Editar</a> |
+    <a asp-action="Index" class="btn btn-warning"> <i class="bi bi-arrow-return-left">Regresar a Cliente</i></a>
 </div>

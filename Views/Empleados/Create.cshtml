@@ -4,16 +4,17 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
+<h1>Crear Empleado</h1>
+<br>
 <h4>Empleado</h4>
 <hr />
+<br>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Idpuesto" class="control-label"></label>
+                <label asp-for="Idpuesto" class="control-label">Puesto</label>
                 <select asp-for="Idpuesto" class="form-control" asp-items="ViewBag.Idpuesto"></select>
             </div>
             <div class="form-group">
@@ -71,15 +72,16 @@
                 <input asp-for="RetencionCcss" class="form-control" />
                 <span asp-validation-for="RetencionCcss" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <button type="submit" class="btn btn-success"><i class="bi bi-plus-circle"> Crear</i></button>
+                <button type="submit" class="btn btn-success  bi bi-plus-circle"> Agregar Empleado</button>
             </div>
         </form>
     </div>
 </div>
-
+<br>
 <div>
-    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"></i> Regresar a Empleado</a>   
 </div>
 
 @section Scripts {

@@ -30,12 +30,7 @@
             <th>
                 Actividad
             </th>
-            <th>
-                Empleado
-            </th>
-            <th>
-                Matricula
-            </th>
+        
             <th>
                 Sala
             </th>
@@ -64,19 +59,14 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.IdactividadNavigation.Descripcion)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdempleadoNavigation.Apellidos)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdmatriculaNavigation.Idmatricula)
-                </td>
+                
                 <td>
                     @Html.DisplayFor(modelItem => item.IdsalaNavigation.Descripción)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Idclase" class="btn btn-warning"> <i class="bi bi-pen"></i> Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.Idclase" class="btn btn-secondary"> <i class="bi bi-eye"></i> detalles</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Idclase" class="btn btn-danger"> <i class="bi bi-trash2"></i> Elimninar</a>
+                    <a asp-action="Edit" asp-route-id="@item.Idclase" class="btn btn-warning"> <i class="bi bi-pencil-fill"> Editar</i> </a> |
+                    <a asp-action="Details" asp-route-id="@item.Idclase" class="btn btn-secondary"> <i class="bi bi-info-circle-fill"> Ver</i> </a> |
+                    <a asp-action="Delete" asp-route-id="@item.Idclase" class="btn btn-danger"> <i class="bi bi-x-circle-fill"> Borrar</i> </a>
                 </td>
             </tr>
         }

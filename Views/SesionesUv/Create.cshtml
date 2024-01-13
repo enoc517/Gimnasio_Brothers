@@ -4,30 +4,31 @@
     ViewData["Title"] = "Crear";
 }
 
-<h1>Crear</h1>
-
-<h4>SesionesUv</h4>
+<h1>Crear Sesion UV</h1>
+<br>
+<h4>Sesiones UV</h4>
 <hr />
+<br>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="IdclienteMembresia" class="control-label"></label>
+                <label asp-for="IdclienteMembresia" class="control-label">Cliente Membresia</label>
                 <select asp-for="IdclienteMembresia" class ="form-control" asp-items="ViewBag.IdclienteMembresia"></select>
             </div>
             <div class="form-group">
-                <label asp-for="CantidadSesiones" class="control-label"></label>
+                <label asp-for="CantidadSesiones" class="control-label">Cantidad De Sesiones</label>
                 <input asp-for="CantidadSesiones" class="form-control" />
                 <span asp-validation-for="CantidadSesiones" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FechaSesion" class="control-label"></label>
+                <label asp-for="FechaSesion" class="control-label">Fecha de Sesion</label>
                 <input asp-for="FechaSesion" class="form-control" />
                 <span asp-validation-for="FechaSesion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="HoraSesion" class="control-label"></label>
+                <label asp-for="HoraSesion" class="control-label">Hora De Sesion</label>
                 <input asp-for="HoraSesion" class="form-control" />
                 <span asp-validation-for="HoraSesion" class="text-danger"></span>
             </div>
@@ -36,15 +37,16 @@
                 <input asp-for="Disponibles" class="form-control" />
                 <span asp-validation-for="Disponibles" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-primary" />
+                <button type="submit" class="btn btn-success  bi bi-plus-circle"> Agregar Sesion UV</button>
             </div>
         </form>
     </div>
 </div>
-
+<br>
 <div>
-    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"></i> Regresar a Sesiones UV</a>
 </div>
 
 @section Scripts {

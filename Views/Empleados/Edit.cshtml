@@ -1,12 +1,13 @@
 ﻿@model Gimnasio_Brothers.Models.Empleado
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
-<h1>Editar</h1>
+<h1>Editar Empleado</h1>
 
 <h4>Empleado</h4>
+<br>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -73,15 +74,16 @@
                 <input asp-for="RetencionCcss" class="form-control" />
                 <span asp-validation-for="RetencionCcss" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <button type="submit" class="btn btn-success"><i class="bi bi-plus-circle"> Editar</i></button>
+                <button type="submit" class="btn btn-success"><i class="bi bi-plus-circle"> Guardar</i></button>
             </div>
         </form>
     </div>
 </div>
-
+<br>
 <div>
-    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"> Regresar a Empleado</i></a>
 </div>
 
 @section Scripts {

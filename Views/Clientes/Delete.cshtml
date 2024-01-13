@@ -5,8 +5,9 @@
 }
 
 <h1>Eliminar</h1>
-
-<h3>Esta seguro de eliminar este cliente?</h3>
+<br>
+<h3>¿Esta seguro de eliminar este cliente?</h3>
+<br>
 <div>
     <h4>Cliente</h4>
     <hr />
@@ -30,7 +31,7 @@
             @Html.DisplayFor(model => model.Dirrecion)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaNacimento)
+            Fecha De Nacimento
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FechaNacimento)
@@ -48,13 +49,13 @@
             @Html.DisplayFor(model => model.Cedula)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.EstadoCliente)
+            Estado Del Cliente
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.EstadoCliente)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SesionesRayosUva)
+            Sesiones De Rayos UV
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SesionesRayosUva)
@@ -64,7 +65,7 @@
     <form asp-action="Delete" id="BorrarCliente">
         <input type="hidden" asp-for="Idcliente" />
         <input type="button" id="btnDeleteJs" value="Eliminar" class="btn btn-danger" /> |
-        <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+        <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"> Regresar a Cliente</i></a>
     </form>
 </div>
 

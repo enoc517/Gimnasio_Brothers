@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<Gimnasio_Brothers.Models.Proveedore>
 
 @{
-    ViewData["Title"] = "Indice";
+    ViewData["Title"] = "Provedor";
 }
 
-<h1>Proveedores</h1>
-
+<h1>Provedores</h1>
+<br>
 <p>
     <a asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle"> Agregar nuevo preoveedor</i></a>
 </p>
+<br>
 <table class="table" id="tblProveedore">
     <thead>
         <tr>
@@ -19,7 +20,7 @@
                 @Html.DisplayNameFor(model => model.Telefono)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CorreoElectronico)
+                Correo
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Estado)

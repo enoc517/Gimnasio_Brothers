@@ -4,21 +4,23 @@
     ViewData["Title"] = "Crear";
 }
 
-<h1>Crear</h1>
-
+<h1>Crear Matricula</h1>
+<br>
 <h4>Martricula</h4>
 <hr />
+<br>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Idclase" class="control-label"></label>
+                <label asp-for="Idclase" class="control-label">Clase</label>
                 <input asp-for="Idclase" class="form-control" />
                 <span asp-validation-for="Idclase" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <label asp-for="Idcliente" class="control-label"></label>
+                <label asp-for="Idcliente" class="control-label">Cliente</label>
                 <select asp-for="Idcliente" class ="form-control" asp-items="ViewBag.Idcliente"></select>
             </div>
             <div class="form-group form-check">
@@ -26,15 +28,16 @@
                     <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
                 </label>
             </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-primary" />
+                <button type="submit" class="btn btn-success  bi bi-plus-circle"> Agregar Matricula</button>
             </div>
         </form>
     </div>
 </div>
-
+<br>
 <div>
-    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"></i> Regresar a Matricula</a>
 </div>
 
 @section Scripts {

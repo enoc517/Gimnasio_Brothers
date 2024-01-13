@@ -4,10 +4,11 @@
     ViewData["Title"] = "Agregar";
 }
 
-<h1>Agregar</h1>
-
-<h4>Proveedor</h4>
+<h1>Agregar Provedor</h1>
+<br>
+<h4>Provedor</h4>
 <hr />
+<br>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -23,7 +24,7 @@
                 <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CorreoElectronico" class="control-label"></label>
+                <label asp-for="CorreoElectronico" class="control-label">Correo</label>
                 <input asp-for="CorreoElectronico" class="form-control" />
                 <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
             </div>
@@ -32,15 +33,16 @@
                 <input asp-for="Estado" class="form-control" />
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Agregar" class="btn btn-primary" />
+                <button type="submit" class="btn btn-success  bi bi-plus-circle"> Agregar Pedido</button>
             </div>
         </form>
     </div>
 </div>
-
+<br>
 <div>
-    <a asp-action="Index">Regresar a la lista</a>
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"></i> Regresar a Provedores</a>
 </div>
 
 @section Scripts {

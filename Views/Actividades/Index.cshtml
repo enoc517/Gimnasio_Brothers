@@ -7,10 +7,10 @@
 <h1>Actividades</h1>
 <br>
 <p>
-    <a asp-action="Create" class="btn btn-success"> <i class="bi bi-plus-lg"></i> Agregar un Nueva Actividad</a>
+    <a asp-action="Create" class="btn btn-success"> <i class="bi bi-plus-lg"> </i> Añadir nueva Actividad</a>
 </p>
 <br>
-<table class="table" id="tblActividades">
+<table class="table-info" id="tblActividades">
     <thead>
         <tr>
             <th>
@@ -27,9 +27,9 @@
                     @Html.DisplayFor(modelItem => item.Descripcion)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Idactividades" class="btn btn-warning"> <i class="bi bi-pen"></i> Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.Idactividades" class="btn btn-secondary"> <i class="bi bi-eye"></i> Detalles</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Idactividades" class="btn btn-danger"> <i class="bi bi-trash2"></i> Eliminar</a>
+                    <a asp-action="Edit" asp-route-id="@item.Idactividades" class="btn btn-warning"> <i class="bi bi-pencil"></i> Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Idactividades" class="btn btn-secondary"> <i class="bi bi-info-circle"></i> Ver</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Idactividades" class="btn btn-danger"> <i class="bi bi-x-circle"></i> Borrar</a>
                 </td>
             </tr>
         }

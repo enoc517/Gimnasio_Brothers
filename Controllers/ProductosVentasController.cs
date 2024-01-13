@@ -49,7 +49,7 @@ namespace Gimnasio_Brothers.Controllers
         // GET: ProductosVentas/Create
         public IActionResult Create()
         {
-            ViewData["IdcategoriaProducto"] = new SelectList(_context.CategoriaProductos, "IdcategoriaProducto", "Descripcion");
+            ViewData["IdcategoriaProducto"] = new SelectList(_context.CategoriaProductos, "IdcategoriaProducto", "Nombre");
             ViewData["Idprovedores"] = new SelectList(_context.Proveedores, "Idprovedores", "CorreoElectronico");
             return View();
         }
@@ -86,7 +86,7 @@ namespace Gimnasio_Brothers.Controllers
                 return NotFound();
             }
             ViewData["IdcategoriaProducto"] = new SelectList(_context.CategoriaProductos, "IdcategoriaProducto", "Descripcion", productosVentum.IdcategoriaProducto);
-            ViewData["Idprovedores"] = new SelectList(_context.Proveedores, "Idprovedores", "CorreoElectronico", productosVentum.Idprovedores);
+            ViewData["Idprovedores"] = new SelectList(_context.Proveedores, "Idprovedores", "Nombre", productosVentum.Idprovedores);
             return View(productosVentum);
         }
 
@@ -165,6 +165,21 @@ namespace Gimnasio_Brothers.Controllers
         private bool ProductosVentumExists(int id)
         {
             return _context.ProductosVenta.Any(e => e.Idproductos == id);
+        }
+        [HttpDelete]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConJs(ProductosVentum productosventa)
+        {
+            string mensaje = "Error al borrar registro";
+            var encontrado = _context.Clases.Find(productosventa.Idproductos);
+            if (encontrado != null)
+            {
+                _context.Clases.Remove(encontrado);
+                _context.SaveChanges();
+                mensaje = "Registro borrado!";
+            }
+
+            return Json(new { result = true, mensaje = mensaje });
         }
     }
 }

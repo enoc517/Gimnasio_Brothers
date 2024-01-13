@@ -4,8 +4,8 @@
     ViewData["Title"] = "Indice";
 }
 
-<h1>Produtos</h1>
-
+<h1>Produtos de Ventas</h1>
+<br>
 <p>
     <a asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle"> Agregar nuevo producto</i></a>
 </p>
@@ -16,19 +16,14 @@
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PrecioUnitario)
+                Precio Unitario
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Cantidad)
             </th>
+          
             <th>
-                @Html.DisplayNameFor(model => model.FechaCaducidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdcategoriaProductoNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdprovedoresNavigation)
+                Provedor
             </th>
             <th></th>
         </tr>
@@ -45,19 +40,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Cantidad)
             </td>
+           
             <td>
-                @Html.DisplayFor(modelItem => item.FechaCaducidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdcategoriaProductoNavigation.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdprovedoresNavigation.CorreoElectronico)
+                @Html.DisplayFor(modelItem => item.IdcategoriaProductoNavigation.Nombre)
             </td>
             <td>
                     <a asp-action="Edit" asp-route-id="@item.Idproductos" class="btn btn-warning"><i class="bi bi-pencil"> Editar</i></a> |
                     <a asp-action="Details" asp-route-id="@item.Idproductos" class="btn btn-secondary"><i class="bi bi-info-circle"> Ver</i></a> |
-                    <a asp-action="Delete" asp-route-id="@item.Idproductos">class="btn btn-danger"><i class="bi bi-x-circle"> Eliminar</i></a>
+                    <a asp-action="Delete" asp-route-id="@item.Idproductos" class="btn btn-danger"><i class="bi bi-x-circle"> Borrar</i></a>
             </td>
         </tr>
 }

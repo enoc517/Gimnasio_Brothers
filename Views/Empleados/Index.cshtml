@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<Gimnasio_Brothers.Models.Empleado>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Empleado";
 }
 
 <h1>Empleados</h1>
-
+<br>
 <p>
-    <a asp-action="Create" class="btn btn-success"> <i class="bi bi-plus-circle"> Crear nuevo Empleado </i></a>
+    <a asp-action="Create" class="btn btn-success"> <i class="bi bi-plus-lg"> </i> Añadir nuevo Empleado </a>
 </p>
+<br>
 <table class="table" id="tblempleado">
     <thead>
         <tr>
@@ -18,33 +19,15 @@
             <th>
                 <h6>Apellidos</h6>
             </th>
-            <th>
-                <h6>Dirreccion</h6>
-            </th>
+           
             <th>
                 <h6>Telefono</h6>
             </th>
-            <th>
-                <h6>Cedula</h6>
-            </th>
-            <th>
-                <h6>Fecha de Contratacion</h6>
-            </th>
-            <th>
-                <h6>Fecha de Pago</h6>
-            </th>
+        
             <th>
                 <h6>Categoria Profesional</h6>
             </th>
-            <th>
-                <h6>Numero de Seguridad Social</h6>
-            </th>
-            <th>
-                <h6>Cuenta Bancaria</h6>
-            </th>
-            <th>
-                <h6>Retencion de Ccss</h6>
-            </th>
+       
             <th>
                 <h6>Puesto</h6>
             </th>
@@ -61,40 +44,22 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Apellidos)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Dirreccion)
-                </td>
+            
                 <td>
                     @Html.DisplayFor(modelItem => item.Telefono)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cedula)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FechaContratacion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FechaPago)
-                </td>
+                </td>             
+          
                 <td>
                     @Html.DisplayFor(modelItem => item.CategoriaProfesional)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumSeguridadSocial)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CuentaBancaria)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RetencionCcss)
-                </td>
+             
                 <td>
                     @Html.DisplayFor(modelItem => item.IdpuestoNavigation.CategoriaPuesto)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Idempleado" class="btn btn-warning"> <i class="bi bi-pencil-fill"> Editar</i> </a> |
-                    <a asp-action="Details" asp-route-id="@item.Idempleado" class="btn btn-secondary"> <i class="bi bi-info-circle-fill"> Ver</i> </a> |
-                    <a asp-action="Delete" asp-route-id="@item.Idempleado" class="btn btn-danger"> <i class="bi bi-x-circle-fill"> Borrar</i> </a>
+                    <a asp-action="Edit" asp-route-id="@item.Idempleado" class="btn btn-warning"> <i class="bi bi-pencil"> Editar</i> </a> |
+                    <a asp-action="Details" asp-route-id="@item.Idempleado" class="btn btn-secondary"> <i class="bi bi-info-circle"> Ver</i> </a> |
+                    <a asp-action="Delete" asp-route-id="@item.Idempleado" class="btn btn-danger"> <i class="bi bi-x-circle"> Borrar</i> </a>
                 </td>
             </tr>
         }

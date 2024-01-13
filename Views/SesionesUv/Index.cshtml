@@ -5,27 +5,28 @@
 }
 
 <h1>Sesiones Uv</h1>
-
+<br>
 <p>
     <a asp-action="Create" class="btn btn-success"> <i class="bi bi-plus-circle">Anadir Nuevo</i></a>
 </p>
+<br>
 <table class="table" id="tblSesionesUv">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CantidadSesiones)
+                Cantidad De Sesiones
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaSesion)
+                Fecha De Sesion
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.HoraSesion)
+                Hora De Sesion
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Disponibles)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdclienteMembresiaNavigation)
+                Cliente Membresia
             </th>
             <th></th>
         </tr>
@@ -49,9 +50,9 @@
                 @Html.DisplayFor(modelItem => item.IdclienteMembresiaNavigation.IdclienteMembresia)
             </td>
             <td>
-                    <a asp-action="Edit" asp-route-id="@item.Idsesiones" class="btn btn-warning"> <i class="bi bi-pencil-fill"> Editar</i> </a> |
-                    <a asp-action="Details" asp-route-id="@item.Idsesiones" class="btn btn-secondary"> <i class="bi bi-info-circle-fill"> Ver</i> </a> |
-                    <a asp-action="Delete" asp-route-id="@item.Idsesiones" class="btn btn-danger"> <i class="bi bi-x-circle-fill"> Eliminar</i> </a> 
+                    <a asp-action="Edit" asp-route-id="@item.Idsesiones" class="btn btn-warning"> <i class="bi bi-pencil"> Editar</i> </a> |
+                    <a asp-action="Details" asp-route-id="@item.Idsesiones" class="btn btn-secondary"> <i class="bi bi-info-circle"> Ver</i> </a> |
+                    <a asp-action="Delete" asp-route-id="@item.Idsesiones" class="btn btn-danger"> <i class="bi bi-x-circle"> Eliminar</i> </a> 
             </td>
         </tr>
 }

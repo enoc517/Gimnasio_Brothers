@@ -4,10 +4,11 @@
     ViewData["Title"] = "Editar";
 }
 
-<h1>Editar</h1>
-
+<h1>Editar Cliente</h1>
+<br>
 <h4>Cliente</h4>
 <hr />
+<br>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -29,7 +30,7 @@
                 <span asp-validation-for="Dirrecion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FechaNacimento" class="control-label"></label>
+                <label asp-for="FechaNacimento" class="control-label">Fecha de Nacimiento</label>
                 <input asp-for="FechaNacimento" class="form-control" />
                 <span asp-validation-for="FechaNacimento" class="text-danger"></span>
             </div>
@@ -44,24 +45,25 @@
                 <span asp-validation-for="Cedula" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EstadoCliente" class="control-label"></label>
+                <label asp-for="EstadoCliente" class="control-label">Estado Del Cliente</label>
                 <input asp-for="EstadoCliente" class="form-control" />
                 <span asp-validation-for="EstadoCliente" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SesionesRayosUva" class="control-label"></label>
+                <label asp-for="SesionesRayosUva" class="control-label">Sesiones De Rayos UV</label>
                 <input asp-for="SesionesRayosUva" class="form-control" />
                 <span asp-validation-for="SesionesRayosUva" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-success" />
+                <button type="submit" class="btn btn-success"><i class="bi bi-plus-circle"> Guardar</i></button>
             </div>
         </form>
     </div>
 </div>
-
+<br>
 <div>
-    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"> Regresar a Cliente</i></a>
 </div>
 
 @section Scripts {

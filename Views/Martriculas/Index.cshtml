@@ -3,23 +3,23 @@
 @{
     ViewData["Title"] = "Matricula";
 }
-
+<br>
 <h1>Matricula</h1>
-
+<br>
 <p>
-    <a asp-action="Create" class="btn btn-success"> <i class="bi bi-plus-circle">Anadir Nuevo</i></a>
+    <a asp-action="Create" class="btn btn-success"> <i class="bi bi-plus-lg"> Añadir Nuevo</i></a>
 </p>
 <table class="table" id="tblMartricula">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Idclase)
+                Nombre Clase
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Estado)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdclienteNavigation)
+                Cliente
             </th>
             <th></th>
         </tr>
@@ -37,9 +37,9 @@
                 @Html.DisplayFor(modelItem => item.IdclienteNavigation.Apellidos)
             </td>
             <td>
-                    <a asp-action="Edit" asp-route-id="@item.Idmatricula" class="btn btn-warning"> <i class="bi bi-pencil-fill"> Editar</i> </a> |
-                    <a asp-action="Details" asp-route-id="@item.Idmatricula" class="btn btn-secondary"> <i class="bi bi-info-circle-fill"> Ver</i> </a> |
-                    <a asp-action="Delete" asp-route-id="@item.Idmatricula" class="btn btn-danger"> <i class="bi bi-x-circle-fill"> Eliminar</i> </a> |
+                    <a asp-action="Edit" asp-route-id="@item.Idmatricula" class="btn btn-warning"> <i class="bi bi-pencil"> Editar</i> </a> |
+                    <a asp-action="Details" asp-route-id="@item.Idmatricula" class="btn btn-secondary"> <i class="bi bi-info-circle"> Ver</i> </a> |
+                    <a asp-action="Delete" asp-route-id="@item.Idmatricula" class="btn btn-danger"> <i class="bi bi-x-circle"> Eliminar</i> </a> |
             </td>
         </tr>
 }

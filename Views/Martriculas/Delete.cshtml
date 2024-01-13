@@ -4,15 +4,16 @@
     ViewData["Title"] = "Eliminar";
 }
 
-<h1>Eliminar</h1>
-
-<h3>Esta seguro de eliminar este elemento?</h3>
+<h1>Eliminar Matricula</h1>
+<br>
+<h3>¿Esta seguro de eliminar este elemento?</h3>
+<br>
 <div>
     <h4>Martricula</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Idclase)
+            Nombre Clase
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Idclase)
@@ -24,13 +25,13 @@
             @Html.DisplayFor(model => model.Estado)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdclienteNavigation)
+            Nombre Del Cliente
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdclienteNavigation.Apellidos)
+            @Html.DisplayFor(model => model.IdclienteNavigation.Nombre)
         </dd>
     </dl>
-    
+    <br>
     <form asp-action="Delete" id="formulario">
         <input type="hidden" asp-for="Idmatricula" />
         <input type="button" id="btnDeleteJs" value="Eliminar" class="btn btn-danger" /> |

@@ -1,11 +1,11 @@
 ﻿@model Gimnasio_Brothers.Models.Empleado
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles";
 }
 
 <h1>Detalles</h1>
-
+<br>
 <div>
     <h4>Empleado</h4>
     <hr />
@@ -86,5 +86,5 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Idempleado" class="btn btn-danger"> <i class="bi bi-pencil-fill"> Editar</i> </a> |
-    <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+    <a asp-action="Index" class="btn btn-warning"> <i class="bi bi-arrow-return-left">Regresar a Empleado</i></a>
 </div>

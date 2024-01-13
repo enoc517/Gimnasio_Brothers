@@ -5,10 +5,11 @@
 }
 
 <h1>Eliminar</h1>
-
-<h3>Esta seguro de eliminar esta Categoria?</h3>
+<br>
+<h3>¿Esta seguro de eliminar esta Categoria?</h3>
+<br>
 <div>
-    <h4>CategoriaProducto</h4>
+    <h4>Categoria de Producto</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -24,11 +25,11 @@
             @Html.DisplayFor(model => model.Descripcion)
         </dd>
     </dl>
-    
+    <br>
     <form asp-action="Delete" id="formulario">
         <input type="hidden" asp-for="IdcategoriaProducto" />
         <input type="button" id="btnDeleteJs" value="Eliminar" class="btn btn-danger" /> |
-        <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left">Regresar a la Lista</i></a>
+        <a asp-action="Index" class="btn btn-warning"><i class="bi bi-arrow-return-left"> Regresar a Categoria Productos</i></a>
     </form>
 </div>
 
